@@ -1,0 +1,198 @@
+footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer .footer-wrapp {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+footer .footer-wrapp .footer-brands  img {
+    vertical-align: middle;
+    border-style: none;
+    max-width: 150px;
+    max-height: 140px;
+}
+
+
+footer .footer-wrapp .footer-brands a.footer-title {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+footer .footer-wrapp .footer-brands a.footer-title h1 {
+    font-size: 37px;
+    line-height: 13px;
+    color: #F56D15;
+    font-weight: 400;
+}
+
+footer .footer-wrapp .footer-brands a.footer-title h1 span {
+    font-size: 42px;
+    line-height: 16px;
+    color: #5E17EB;
+    font-weight: 400;
+}
+
+
+footer .footer-wrapp .footer-brands p.footer-quote {
+    margin-top: 24px;
+    width: 100%;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 24px;
+    color: #b0b0b0;
+}
+
+footer .footer-wrapp .link-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+footer .footer-wrapp .link-wrap h4 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: #152c5b;
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
+
+footer .footer-wrapp .link-wrap ul.link-list {
+    margin-top: 1rem;
+    padding-left: 0; /* Menghapus poin (dot) */
+    list-style: none;
+}
+
+footer .footer-wrapp .link-wrap ul.link-list li.link-item a,
+footer .footer-wrapp .link-wrap ul.link-list li.link-item span {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 2rem;
+    width: fit-content;
+    margin: auto;
+    display: block;
+    padding: 5px 10px;
+    color: #b0b0b0;
+    text-decoration: none;
+}
+
+footer .footer-bottom {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 50px;
+}
+
+footer .footer-bottom span {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #b0b0b0;
+}
+
+@media screen and (min-width: 320px) {
+    footer .link-wrap ul.link-list li.link-item a,
+    footer .link-wrap ul.link-list li.link-item span {
+        display: block;
+        width: fit-content;
+        margin: auto;
+    }
+
+    footer .footer-wrapp .footer-brands a.footer-title h1 {
+        font-size: 25px;
+    }
+    footer .footer-wrapp .footer-brands a.footer-title h1 span{
+        font-size: 30px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    footer .footer-wrapp .footer-brands a.footer-title h1 {
+        font-size: 30px;
+    }
+    footer .footer-wrapp .footer-brands a.footer-title h1 span{
+        font-size: 34px;
+    }
+
+
+    footer .footer-wrapp .link-wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 3rem;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 70px;
+    }
+
+    /* footer footer-bar {
+        margin-left: 40px;
+        margin-right: 40px;
+    } */
+
+    footer .footer-wrapp {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 30px;
+        margin-top: 0;
+    }
+
+    footer .footer-wrapp .footer-brands {
+        text-align: center;
+    }
+
+    footer .footer-wrapp .footer-brands a.footer-title {
+        font-size: 10px;
+    }
+
+
+    footer .footer-wrapp .footer-brands p.footer-quote {
+        margin-top: 5px;
+        /* max-width: 325px; */
+        font-size: 20px;
+        text-align: center;
+    }
+
+    footer .footer-wrapp .link-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 0;
+        gap: 30px;
+    }
+
+    footer .footer-wrapp .link-wrap h4 {
+        font-size: 18px;
+    }
+
+    footer .footer-wrapp .link-wrap ul.link-list {
+        margin-top: 24px;
+    }
+
+    footer .footer-wrapp .link-wrap ul.link-list li.link-item a,
+    footer .footer-wrapp .link-wrap ul.link-list li.link-item span {
+        font-size: 16px;
+
+    }
+}

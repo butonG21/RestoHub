@@ -1,0 +1,30 @@
+footer {
+    div.footer-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-top: 45px;
+
+        div.footer-brands {
+            a.footer-title {
+                display: block;
+                padding: 10px;
+                font-size: 10px;
+            }
+            p.footer-quote {
+                margin-top: 20px;
+                width: 100%;
+                font-weight: 350;
+                font-size: 15px;
+                line-height: 20px;
+                color: #5e5d5dbb;
+            }
+        }
+
+        div.link-wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+    }
+}

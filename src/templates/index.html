@@ -2,18 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Restaurant Apps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../public/images/logo/favicon.png" />
+    <title>RestoHub</title>
   </head>
+
   <body>
-    <h1>Restaurant Apps Starter Project</h1>
-    <p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-    <p>
-      Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros
-      sebagai background hero elemen.
-    </p>
-    <img src="./images/heros/hero-image_1.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_2.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_3.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_4.jpg" width="450" alt="" />
+    <header>
+      <a href="#maincontent" class="skip-link">Skip to Content</a>
+      <app-bar class="app-bar"></app-bar>
+    </header>
+
+    <main>
+      <div class="content">
+        <hero-picture class="hero"></hero-picture>
+
+        <div class="container" id="main-content" tabindex="0">
+          <div id="content">
+            <h2 class="section-title" tabindex="0">Daftar Restaurant</h2>
+            <div class="main">
+              <restaurant-list></restaurant-list>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer>
+      <footer-bar></footer-bar>
+    </footer>
+
   </body>
 </html>

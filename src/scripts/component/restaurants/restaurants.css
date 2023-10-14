@@ -1,0 +1,143 @@
+@media screen and (min-width: 320px){
+    .container {
+        margin: 0 2rem;
+    }
+
+    div#main-content {
+        margin-top: 40px;
+    }
+
+    h2.section-title {
+        margin: 20px auto;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    restaurant-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+    }
+
+    restaurant-item .card {
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+        background: #F0F0F0;
+        border-radius: 15px;
+        height: 100%;
+    }
+
+    restaurant-item div.card img.img-card {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+    }
+
+    restaurant-item div.card div.text-card-wrapper {
+        margin: 20px;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description {
+        width: 100%;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-upper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-upper p.resto-location {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #B4B4B3;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-upper div.rating .rating-icon {
+        color: #ffce31;
+        font-size: 16px;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-upper div.rating .rating-value {
+        color: #010611;
+        font-size: 15px;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-bottom h3.resto-title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 30px;
+        color: #010611;
+        padding-bottom: 10px;
+        margin-top: 12px;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    restaurant-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    restaurant-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    restaurant-item div.card img.img-card {
+        height: 180px;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-upper p.resto-location {
+        font-size: 15px;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-upper div.rating .rating-icon {
+        color: #ffce31;
+        font-size: 16px;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-upper div.rating .rating-value {
+        color: #152c5b;
+        font-size: 16px;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-bottom h3.resto-title {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    restaurant-list {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    restaurant-item div.card img.img-card {
+        height: 180px;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-upper p.resto-location {
+        font-size: 15px;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-upper div.rating .rating-icon {
+        font-size: 20px;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-upper div.rating .rating-value {
+        font-size: 18px;
+    }
+
+    restaurant-item div.card div.text-card-wrapper div.card-description div.card-bottom h3.resto-title {
+        font-size: 18px;
+    }
+}
+
+h2.section-title {
+    font-size: 30px;
+    color: #F15412;
+}

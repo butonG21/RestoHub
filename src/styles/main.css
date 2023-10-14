@@ -1,3 +1,71 @@
-img {
-  display: block;
+@font-face {
+  font-family: 'Robot slab';
+  src: url(../public/font/RobotoSlab-VariableFont_wght.ttf);
 }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  width: 100%;
+}
+
+body {
+  font-family: 'Roboto slab';
+  font-size: 12px;
+  color: #424242;
+}
+
+.button,
+a {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+  margin: 2px;
+  box-sizing: border-box;
+}
+
+
+.skip-link {
+  position: absolute;
+  top: -70px;
+  left: 0;
+  background-color: #F56D15;
+  color: white;
+  padding: 10px 10px;
+  border: 1px solid #F56D15;
+  font-size: 18px;
+  max-width: 96px;
+  max-height: 80px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+   top: 7px;
+}
+
+#main-Content #content {
+  margin-top: 60px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.1);
+  margin-bottom: 40px
+}
+
+@media screen and (min-width: 1200px){
+
+  .container {
+      margin: 0 10%;
+  }
+}
+
+@import url(../scripts/component/navigation-bar/app-bar.css);
+@import url(../scripts/component/hero/hero.css);
+@import url(../scripts/component/restaurants/restaurants.css);
+@import url(../scripts/component/footer-bar/footer.css);

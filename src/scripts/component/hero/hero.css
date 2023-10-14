@@ -1,0 +1,83 @@
+@media screen and (min-width: 320px) {
+    .hero .img-wrapp {
+        width: 100%;
+        height: 620px;
+        position: relative;
+    }
+
+    .hero .img-wrapp img {
+        object-fit: cover;
+        width: 100%;
+        height: 620px;
+        position: absolute;
+        filter: brightness(0.7);
+        top: 0;
+        z-index: 0;
+    }
+
+    .hero .hero-text_wrapp {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        width: -webkit-fill-available;
+        z-index: 5;
+    }
+
+    .hero .hero-text_wrapp .banner-text {
+        margin-top: 20rem;
+    }
+
+    .hero .hero-text_wrapp .banner-text h2 {
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        line-height: 45px;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        color: #DDDDDD;
+        position: relative;
+        z-index: 5;
+    }
+
+    .hero .hero-text_wrapp .banner-text h2 span.world-of-cuisine {
+        font-size: 43px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        color: #F05454;
+    }
+
+    .hero .hero-text_wrapp .banner-text h2 span.a-story {
+        font-size: 43px;
+        font-style: italic;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        color: #F56D15;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .hero .hero-text_wrapp .banner-text h2 {
+        flex-direction: row;
+        line-height: 50px;
+        font-size: 40px; /* Ukuran font yang lebih besar */
+    }
+
+    .hero .hero-text_wrapp .banner-text h2 span.world-of-cuisine {
+        font-size: 46px; /* Ukuran font yang lebih besar */
+        padding-left: 5px;
+    }
+
+    .hero .hero-text_wrapp .banner-text h2 span.a-story {
+        font-size: 44px; /* Ukuran font yang lebih besar */
+        padding-left: 10px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .hero .img-wrapp img {
+      min-width: 1000px;
+    }
+  }
