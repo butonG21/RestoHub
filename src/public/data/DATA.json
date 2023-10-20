@@ -81,14 +81,6 @@
       "rating": 4.6
     },
     {
-      "id": "custom2",
-      "name": "The Galley Restaurant",
-      "description": "Various foods that are tempting and make you full, the taste is really good!!",
-      "pictureId": "https://lh3.googleusercontent.com/gps-proxy/AFm_dcQHBjMRgXvafsSR5nkuMEEa1bXY9_PTBhg1rncXAPMgDfF9Q5UJ34DL1ltzendcImuvtPfWip7-BLiDrkztvKYh51gVDfspY7oN23izltl4uRHG6XzpS6cqhQve-2W4oqVVAPJXWKmCQU8b3qfHh8qFvUEHzFFTqLUtRMfH_aXBYpEAWrszBnTi3Q=s680-w680-h510",
-      "city": "Jakarta",
-      "rating": 4.1
-    },
-    {
       "id": "custom3",
       "name": "Cali Deli & Madame Ching",
       "description": "Banh mi sandwiches, pho soups & other Vietnamese classics on offer in a quaint, colorful eatery.",
