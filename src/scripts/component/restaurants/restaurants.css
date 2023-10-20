@@ -27,6 +27,10 @@
         height: 100%;
     }
 
+    resto-item a {
+        text-decoration: none;
+    }
+
     resto-item div.card img.img-card {
         width: 100%;
         height: 120px;
