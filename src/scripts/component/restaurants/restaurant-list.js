@@ -1,23 +1,23 @@
 import './restaurant-item';
-import data from '../../../public/data/DATA.json';
 
 class RestaurantList extends HTMLElement {
-  connectedCallback() {
+  set List(restaurants) {
+    this._list = restaurants;
     this.render();
   }
 
   render() {
-    const { restaurants } = data; // Menggunakan data yang telah diimpor
+    this.innerHTML = '';
+    this._list.forEach((resto) => {
+      const restoElement = document.createElement('resto-item');
+      restoElement.resto = resto;
+      this.appendChild(restoElement);
+    });
+  }
 
-    this.innerHTML = `
-        ${restaurants.map((restaurant) => `
-          <restaurant-item
-            name="${restaurant.name}"
-            image="${restaurant.pictureId}"
-            location="${restaurant.city}"
-            rating="${restaurant.rating}"
-          ></restaurant-item>
-        `).join('')}    `;
+  renderError(message) {
+    this.innerHTML += `<h3 class="text-center text-white">${message}</h3>`;
   }
 }
+
 customElements.define('restaurant-list', RestaurantList);
