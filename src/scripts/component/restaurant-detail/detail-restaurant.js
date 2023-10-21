@@ -1,4 +1,4 @@
-import API_ENDPOINTS from '../../globals/api-endpoints';
+import './restaurant-info';
 
 class RestaurantDetail extends HTMLElement {
   set Detail(detail) {
@@ -18,13 +18,18 @@ class RestaurantDetail extends HTMLElement {
           <div class="gradient-img"></div>
               <img
                   src="./images/heros/hero-image_4.jpg"
-                  alt="resto-profile"
+                  alt="restaurant
+          -profile"
               />
         </div>
       </div>
-
-      <resto-info></resto-info>
+      <restaurant-info></restaurant-info>
     `;
+
+    const restaurantInfo = this.querySelector('restaurant-info');
+    if (restaurantInfo) {
+      restaurantInfo.Info = this._detail;
+    }
   }
 }
 customElements.define('restaurant-detail', RestaurantDetail);

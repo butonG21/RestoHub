@@ -69,4 +69,5 @@ hr {
 @import url(../scripts/component/navigation-bar/app-bar.css);
 @import url(../scripts/component/hero/hero.css);
 @import url(../scripts/component/restaurants/restaurants.css);
+@import url(../scripts/component/restaurant-detail/detail.css);
 @import url(../scripts/component/footer-bar/footer.css);

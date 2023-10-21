@@ -6,8 +6,8 @@ import { createElementDetail } from '../templates/template-creator';
 const Detail = {
   async render() {
     return `
-    <div class="container" id='main-content'>
-      <restaurant-detail></restaurant-detail>
+    <div id='main-content'>
+        <restaurant-detail class="detail"></restaurant-detail>
     </div>
     `;
   },
@@ -17,7 +17,7 @@ const Detail = {
 
     try {
       const restaurantData = await RestaurantDataSources.detailsRestaurant(url.id);
-      console.log(restaurantData)
+      console.log(restaurantData);
       if (restaurantData.restaurant) {
         createElementDetail('restaurant-detail', restaurantData.restaurant);
       } else {
