@@ -1,7 +1,7 @@
 import API_ENDPOINTS from '../../globals/api-endpoints';
 
 class RestaurantDetail extends HTMLElement {
-  set detail(detail) {
+  set Detail(detail) {
     this._detail = detail;
     this.render();
   }
@@ -13,14 +13,17 @@ class RestaurantDetail extends HTMLElement {
     }
 
     this.innerHTML = `
-      <div class="content">
-          <div class="restaurant-img">
+      <div class="hero-background">
+        <div class="background-wrap">
+          <div class="gradient-img"></div>
               <img
-                  src="${API_ENDPOINTS.Image_Url.Medium_Resolution(this._detail.pictureId)}"
+                  src="./images/heros/hero-image_4.jpg"
                   alt="resto-profile"
               />
-          </div>
+        </div>
       </div>
+
+      <resto-info></resto-info>
     `;
   }
 }
