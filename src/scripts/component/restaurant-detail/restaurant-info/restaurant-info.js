@@ -30,7 +30,7 @@ class RestaurantInfo extends LitElement {
             </div>
           </div>
 
-          <div class="sddres-info">
+          <div class="addres-info">
             <div class="addres">
               <span>${this.info.address}</span>
             </div>
