@@ -1,5 +1,5 @@
 
-.detail .hero-background .background-wrap{
+.hero-background .background-wrap{
     width: 100%;
     height: 450px;
     position: relative;
@@ -7,13 +7,13 @@
     left: 0;
 }
 
-.detail .hero-background .background-wrap img{
+.hero-background .background-wrap img{
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
-.detail .hero-background .background-wrap .gradient-img{
+.hero-background .background-wrap .gradient-img{
    position: absolute;
   width: 100%;
   height: 100%;
