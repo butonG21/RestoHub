@@ -1,19 +1,32 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantDataSources from '../../data/restaurant-source';
-import { createRestaurantItemTemplate } from '../templates/template-creator'; // Sesuaikan dengan path yang sesuai
+import '../../component/restaurant-detail/detail-restaurant';
+import { createElementDetail } from '../templates/template-creator';
 
-class Detail {
+const Detail = {
   async render() {
     return `
-      <h2>Detail Page</h2>
-      <div id="restaurant-detail" class="restaurant-detail">
-        <!-- Ini adalah tempat di mana detail restoran akan dirender -->
-      </div>
+    <div id='main-content'>
+        <restaurant-detail class="detail"></restaurant-detail>
+    </div>
     `;
-  }
+  },
 
   async afterRender() {
-    return true;
-  }
-}
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+
+    try {
+      const restaurantData = await RestaurantDataSources.detailsRestaurant(url.id);
+      console.log(restaurantData);
+      if (restaurantData.restaurant) {
+        createElementDetail('restaurant-detail', restaurantData.restaurant);
+      } else {
+        console.log('Restaurant data is not available.');
+      }
+    } catch (error) {
+      console.error('Error fetching restaurant data:', error);
+    }
+  },
+};
+
 export default Detail;

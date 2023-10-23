@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Robot slab';
+  font-family: 'Roboto slab';
   src: url(../public/font/RobotoSlab-VariableFont_wght.ttf);
 }
 * {
@@ -33,7 +33,7 @@ a {
 
 .skip-link {
   position: absolute;
-  top: -70px;
+  top: -80px;
   left: 0;
   background-color: #F56D15;
   color: white;
@@ -69,4 +69,5 @@ hr {
 @import url(../scripts/component/navigation-bar/app-bar.css);
 @import url(../scripts/component/hero/hero.css);
 @import url(../scripts/component/restaurants/restaurants.css);
+/* @import url(../scripts/component/restaurant-detail/detail.css); */
 @import url(../scripts/component/footer-bar/footer.css);

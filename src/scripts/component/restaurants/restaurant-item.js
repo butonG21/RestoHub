@@ -4,10 +4,11 @@ class restoItem extends HTMLElement {
   set resto(resto) {
     this._resto = resto;
     this.render();
-}
+  }
 
   render() {
     this.innerHTML = `
+    <a href="#/detail/${this._resto.id}">
     <div class="card" tabindex="0">
         <img class="img-card" src="${API_ENDPOINT.Image_Url.Small_Resolution(this._resto.pictureId)}" alt="image-${this._resto.name}">
         <div class="text-card-wrapper">
@@ -25,6 +26,8 @@ class restoItem extends HTMLElement {
           </div>
         </div>
     </div>
+    </a>
+
     `;
   }
 }
