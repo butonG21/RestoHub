@@ -21,6 +21,24 @@ class RestaurantDataSources {
     const response = await fetch(API_ENDPOINT.DetailsRestaurant(id));
     return response.json();
   }
+
+  static async getRestaurantsBySearch(search) {
+    const response = await fetch(API_ENDPOINT.SEARCH_RESTO(search));
+    const responseJson = await response.json();
+    return responseJson;
+  }
+
+  static async addNewReview(review) {
+    const response = await fetch(API_ENDPOINT.ADD_REVIEW, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(review),
+    });
+    const responseJson = await response.json();
+    return responseJson;
+  }
 }
 
 export default RestaurantDataSources;

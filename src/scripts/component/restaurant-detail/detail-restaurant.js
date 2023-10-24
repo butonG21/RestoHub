@@ -1,24 +1,31 @@
 import { html, css, LitElement } from 'lit';
 import './restaurant-info/restaurant-info';
+import './menus/menus';
+import './review/review-list';
 
 class RestaurantDetail extends LitElement {
   static styles = css`
+  .container {
+    margin: 0 2rem;
+  }
 
-  .detail-container .hero-background .background-wrap{
-    width: 100%;
-    height: 450px;
+  .detail-upper {
+    height: 430px;
+
+  }
+  .detail-upper .hero-background .background-wrap {
     position: absolute;
     z-index: 0;
     left: 0;
 }
 
-.detail-container .hero-background .background-wrap img{
+.detail-upper .hero-background .background-wrap img{
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
-.detail-container .hero-background .background-wrap .gradient-img{
+.detail-upper .hero-background .background-wrap .gradient-img{
    position: absolute;
   width: 100%;
   height: 100%;
@@ -54,20 +61,20 @@ class RestaurantDetail extends LitElement {
     object-fit: cover;
   }
 
-  div.detail-container .hero-background .background-wrap {
+  div.detail-upper .hero-background .background-wrap {
     width: 100%;
     height: 420px;
-    position: relative; /* Mengatur posisi menjadi relative */
-    z-index: 0; /* Mengatur z-index menjadi 0 untuk menjaga .hero-background di belakang .content */
+    position: relative;
+    z-index: 0;
   }
 
-  div.detail-container .hero-background .background-wrap img {
+  div.detail-upper .hero-background .background-wrap img {
     object-fit: cover;
     width: 100%;
     height: 100%;
   }
 
-  div.detail-container .hero-background .background-wrap .gradient-img {
+  div.detail-upper .hero-background .background-wrap .gradient-img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -77,30 +84,57 @@ class RestaurantDetail extends LitElement {
       rgba(76, 76, 76, 0.5) 100%
     );
   }
+
+  .detail-bottom{
+    margin: 40px;
+  }
+  .detail-bottom .restaurant-description .title {
+    margin: 20px auto;
+    color: #D2500F;
+    font-size: 20px;
+  }
+  .detail-bottom .restaurant-description .description-detail {
+    color: #34364a;
+    font-size: 13px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .detail-container .hero-background .background-wrap {
-    height: 320px;
+  .detail-upper .hero-background .background-wrap {
+    height: 200px;
   }
+
+  .detail-bottom .restaurant-description .title {
+    font-size: 25px;
+  }
+
+  .detail-bottom .restaurant-description .description-detail {
+    font-size: 16px;
+  }
+
 }
 `;
 
   static properties = {
     Detail: { type: Object },
+    foods: { type: Array },
+    drinks: { type: Array },
+    reviews: { type: Array },
+
   };
 
   render() {
+    this.foods = this.Detail?.menus?.foods || [];
+    this.drinks = this.Detail?.menus?.drinks || [];
+    this.reviews = this.Detail?.customerReviews || [];
+    console.log(this.Detail);
+    console.log(this.drinks);
     if (!this.Detail) {
       return html`<p>Loading...</p>`;
     }
-    const restaurantInfo = this.querySelector('restaurant-info');
-    if (restaurantInfo) {
-      restaurantInfo.info = this.Detail;
-    }
 
     return html`
-    <div class="detail-container">
+    <div class="detail-upper">
       <div class="hero-background">
         <div class="background-wrap">
           <div class="gradient-img"></div>
@@ -112,6 +146,23 @@ class RestaurantDetail extends LitElement {
       </div>
       <restaurant-info .info="${this.Detail}"></restaurant-info>
     </div>
+
+    <div class="detail-bottom container">
+      <div class="restaurant-description">
+      <h2 class="title">Description</h2>
+      <p class="description-detail">${this.Detail.description}</p>
+      </div>
+    </div>
+
+    <div class="menus mt-60">
+        <h2 class="section-title">Menus</h2>
+        <menu-elements .foods="${this.foods}" .drinks="${this.drinks}"></menu-elements>
+    </div>
+
+    <div class="reviews">
+    <h2 class="section-title">Customer Reviews</h2>
+    <review-list .reviewList="${this.reviews}"></review-list>
+  </div>
     `;
   }
 }

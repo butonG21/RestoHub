@@ -1,11 +1,11 @@
 import { html, css, LitElement } from 'lit';
 import API_ENDPOINTS from '../../../globals/api-endpoints';
-import './categories-info';
+import '../categories/categories-info';
 
 class RestaurantInfo extends LitElement {
   static styles = css`
-    
-  :host {
+  @media screen and (min-width: 320px)  {
+      :host {
       display: block;
       top: -25rem;
       position: relative;
@@ -13,14 +13,13 @@ class RestaurantInfo extends LitElement {
       width: 100%
       color: #F56D15;
     }
-    :host .container {
+    .container {
       margin: 0 2rem;
     }
 
     :host .container {
       display: flex;
       flex-wrap: wrap;
-
     }
     :host .container .restaurant-image {
       width: 10rem;
@@ -56,8 +55,89 @@ class RestaurantInfo extends LitElement {
     :host .container .restaurant-info .location-rating {
       display: flex;
       align-items: center;
+      justify-content: center;
     }
-  `;
+
+    :host .container .restaurant-info .location-rating .location img {
+      font-size: 1.5rem;
+    }
+
+    :host .container .restaurant-info .location-rating .location .location-name{
+      font-size: 1.6rem;
+      color: #DBE2EF;
+      margin-left: 0.5rem;
+    }
+
+    :host .container .restaurant-info .location-rating .rating {
+      margin-left: 1.5rem;
+      align-item: center;
+    }
+
+    :host .container .restaurant-info .location-rating .rating .star-icon {
+    font-size: 1.5rem;
+    color: #ffce31;
+    font-size: 35px;
+    height: 2.3rem;
+    }
+
+    :host .container .restaurant-info .location-rating .rating .rating-value {
+    font-size: 1.9rem;
+    color: #DBE2EF;
+    margin-left: 0.25rem
+    }
+
+    :host .container .restaurant-info .address-info {
+      padding: 5px;
+      font-size: 1.05rem;
+      color: #DBE2EF;
+      font-weight: 150;
+      text-align: center;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    :host {
+      top: -20rem;
+    }
+
+    :host .container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    :host .container .restaurant-image {
+      width: 20rem;
+      height: 20rem;
+
+    }
+
+    :host .container .restaurant-info {
+      flex: 1;
+      margin-left: 10px;
+      width: fit-content;
+    }
+
+    :host .container .restaurant-info .name {
+      font-size: 3rem;
+    }
+
+    :host .container .restaurant-info .location-rating .location img {
+      font-size: 3rem;
+    }
+
+    :host .container .restaurant-info .location-rating .location .location-name {
+      font-size: 2rem;
+    }
+
+    :host .container .restaurant-info .location-rating .rating .star-icon {
+      font-size: 2rem;
+    }
+
+    :host .container .restaurant-info .address-info {
+      font-size: 1.5rem;
+      font-weight: 250;
+    }
+  }
+ `;
 
   static properties = {
     info: { type: Object },
@@ -70,7 +150,7 @@ class RestaurantInfo extends LitElement {
         <img src="${API_ENDPOINTS.Image_Url.Small_Resolution(this.info.pictureId)}" alt="Profile Image" />
       </div>
 
-      <div class="restaurant-info">
+      <div class="restaurant-info comtainer">
         <h2 class="name">${this.info.name}</h2>
         <div class="location-rating">
           <div class="location">
@@ -78,7 +158,7 @@ class RestaurantInfo extends LitElement {
             <span class="location-name">${this.info.city}</span>
           </div>
           <div class="rating">
-            <img src="./images/star-icon.svg" alt="rating-icon" />
+          <span class="star-icon">★</span>
             <span class="rating-value">${this.info.rating}</span>
           </div>
         </div>
