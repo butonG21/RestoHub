@@ -35,6 +35,18 @@ class RestaurantDetail extends LitElement {
     rgba(76, 76, 76, 0.5) 56.39%,
     rgba(196, 196, 196, 0.15) 100%);
 }
+
+div.menus{
+  margin-top: 40px;
+}
+
+div.menus .section-title{
+  margin: 20px auto;
+  color: #D2500F;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 36px;
+}
 @media screen and (min-width: 320px) {
   div.content {
     position: relative;
@@ -83,6 +95,10 @@ class RestaurantDetail extends LitElement {
       rgba(0, 0, 0, 0.6) 0%,
       rgba(76, 76, 76, 0.5) 100%
     );
+
+    div.menus{
+      margin-top: 40px;
+    }
   }
 
   .detail-bottom{
@@ -154,7 +170,7 @@ class RestaurantDetail extends LitElement {
       </div>
     </div>
 
-    <div class="menus mt-60">
+    <div class="menus container">
         <h2 class="section-title">Menus</h2>
         <menu-elements .foods="${this.foods}" .drinks="${this.drinks}"></menu-elements>
     </div>
