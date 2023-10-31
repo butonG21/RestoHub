@@ -6,7 +6,7 @@ import { createElementDetail } from '../templates/template-creator';
 const Detail = {
   async render() {
     return `
-    <div id='main-content'>
+    <div id="main-content" tabindex="0">
         <restaurant-detail class="detail"></restaurant-detail>
     </div>
     `;

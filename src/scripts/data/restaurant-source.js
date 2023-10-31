@@ -29,7 +29,7 @@ class RestaurantDataSources {
   }
 
   static async addNewReview(review) {
-    const response = await fetch(API_ENDPOINT.ADD_REVIEW, {
+    const response = await fetch(API_ENDPOINT.AddReview, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

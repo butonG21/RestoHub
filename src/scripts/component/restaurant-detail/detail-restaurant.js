@@ -2,11 +2,12 @@ import { html, css, LitElement } from 'lit';
 import './restaurant-info/restaurant-info';
 import './menus/menus';
 import './review/review-list';
+import './review/add-review';
 
 class RestaurantDetail extends LitElement {
   static styles = css`
-  .container {
-    margin: 0 2rem;
+   .container {
+    margin: 0 10%;
   }
 
   .detail-upper {
@@ -47,6 +48,28 @@ div.menus .section-title{
   font-size: 25px;
   line-height: 36px;
 }
+
+div.reviews {
+  margin-top: 40px;
+}
+
+div.reviews .section-title {
+  margin: 20px auto;
+  color: #D2500F;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 36px;
+
+}
+div.add-review .title {
+  margin: 20px auto;
+  color: #D2500F;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 36px;
+}
+
+
 @media screen and (min-width: 320px) {
   div.content {
     position: relative;
@@ -102,16 +125,17 @@ div.menus .section-title{
   }
 
   .detail-bottom{
-    margin: 40px;
+    margin: 60px auto;
   }
+
   .detail-bottom .restaurant-description .title {
     margin: 20px auto;
     color: #D2500F;
-    font-size: 20px;
+    font-size: 25px;
   }
   .detail-bottom .restaurant-description .description-detail {
     color: #34364a;
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
@@ -143,8 +167,7 @@ div.menus .section-title{
     this.foods = this.Detail?.menus?.foods || [];
     this.drinks = this.Detail?.menus?.drinks || [];
     this.reviews = this.Detail?.customerReviews || [];
-    console.log(this.Detail);
-    console.log(this.drinks);
+
     if (!this.Detail) {
       return html`<p>Loading...</p>`;
     }
@@ -162,25 +185,27 @@ div.menus .section-title{
       </div>
       <restaurant-info .info="${this.Detail}"></restaurant-info>
     </div>
-
-    <div class="detail-bottom container">
-      <div class="restaurant-description">
-      <h2 class="title">Description</h2>
-      <p class="description-detail">${this.Detail.description}</p>
+    <div class="detail container">
+      <div class="detail-bottom">
+        <div class="restaurant-description">
+          <h2 class="title">Description</h2>
+          <p class="description-detail">${this.Detail.description}</p>
+        </div>
       </div>
-    </div>
-
-    <div class="menus container">
+      <div class="menus">
         <h2 class="section-title">Menus</h2>
         <menu-elements .foods="${this.foods}" .drinks="${this.drinks}"></menu-elements>
+      </div>
+      <div class="reviews">
+        <h2 class="section-title">Reviews</h2>
+        <review-list .reviewList="${this.reviews}"></review-list>
+      </div>
+      <div class="add-review">
+        <h2 class="title">Add Reviews</h2>
+        <add-review .submitReview="${this.Detail.id}" .reviews="${this.reviews}"></add-review>
+      </div>
     </div>
-
-    <div class="reviews">
-    <h2 class="section-title">Customer Reviews</h2>
-    <review-list .reviewList="${this.reviews}"></review-list>
-  </div>
-    `;
+  `;
   }
 }
-
 customElements.define('restaurant-detail', RestaurantDetail);
