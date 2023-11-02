@@ -58,6 +58,21 @@ module.exports = {
     }),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
-    }),
-  ],
+      runtimeCaching: [
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'restaurant-dicoding-api',
+          },
+        },
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://source.unsplash.com/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'unsplash-image-source',
+          },
+        },
+      ],
+    })],
 };
