@@ -131,7 +131,7 @@ class AddReview extends LitElement {
           window.location.reload();
 
           // Fokuskan ke elemen review yang Anda inginkan
-          const reviewElement = document.querySelector('.reviews'); // Gantilah '#review-element' dengan selector yang sesuai
+          const reviewElement = document.querySelector('review-list'); // Gantilah '#review-element' dengan selector yang sesuai
           if (reviewElement) {
             reviewElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
