@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -18,23 +19,23 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-            // Creates `style` nodes from JS strings
-            'style-loader',
-            // Translates CSS into CommonJS
-            'css-loader',
-            // Compiles Sass to CSS
-            'sass-loader'
-        ]
-    },
-    {
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
+      },
+      {
         test: /\.css$/,
         use: [
-            // Creates `style` nodes from JS strings
-            'style-loader',
-            // Translates CSS into CommonJS
-            'css-loader'
-        ]
-    },      {
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+        ],
+      }, {
         test: /\.html$/,
         loader: 'html-loader',
       },
@@ -46,7 +47,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
-      favicon: './src/public/images/logo/favicon.png',
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -56,5 +56,23 @@ module.exports = {
         },
       ],
     }),
-  ],
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js',
+      runtimeCaching: [
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'restaurant-dicoding-api',
+          },
+        },
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://source.unsplash.com/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'unsplash-image-source',
+          },
+        },
+      ],
+    })],
 };

@@ -14,7 +14,7 @@ class RestaurantInfo extends LitElement {
       color: #F56D15;
     }
     .container {
-      margin: 0 2rem;
+      margin: 0 10%;
     }
 
     :host .container {
@@ -144,6 +144,7 @@ class RestaurantInfo extends LitElement {
   };
 
   render() {
+    console.log(this.info.id);
     return html`
     <div class="container" id="content">
       <div class="restaurant-image">

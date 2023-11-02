@@ -3,7 +3,12 @@ import './review-item';
 
 class ReviewList extends LitElement {
   static styles = css`
-    /* Gaya CSS Anda di sini */
+  :host {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
   `;
 
   static properties = {
