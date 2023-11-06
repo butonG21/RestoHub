@@ -10,8 +10,7 @@
 }
 
 body,
-html,
-main {
+html {
   width: 100%;
   min-height: 100vh;
 }
@@ -59,6 +58,31 @@ hr {
   border-top: 1px solid rgba(0,0,0,.1);
   margin-bottom: 40px
 }
+
+.like {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  z-index: 99;
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.favorite-section {
+  margin-top: 6rem;
+}
+
 
 @media screen and (min-width: 1200px){
 
