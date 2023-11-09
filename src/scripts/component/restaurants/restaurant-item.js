@@ -10,7 +10,7 @@ class restoItem extends HTMLElement {
     this.innerHTML = `
     <a href="#/detail/${this._resto.id}">
     <div class="card" tabindex="0">
-        <img class="img-card" src="${API_ENDPOINT.Image_Url.Small_Resolution(this._resto.pictureId)}" alt="image-${this._resto.name}">
+        <img class="img-card" src="${API_ENDPOINT.Image_Url.Small_Resolution(this._resto.pictureId)}" loading="lazy" alt="image-${this._resto.name}">
         <div class="text-card-wrapper">
           <div class="card-description">
             <div class="card-upper">

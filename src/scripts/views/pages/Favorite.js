@@ -1,7 +1,7 @@
 import FavoriteRestoIdb from '../../data/favorite-resto-idb';
 import '../../component/restaurants/restaurant-list';
 
-import { createElementlist } from '../templates/template-creator';
+import { createElementlist, createNoDataTemplate } from '../templates/template-creator';
 
 const Favorite = {
   async render() {
@@ -22,9 +22,15 @@ const Favorite = {
   async afterRender() {
     const restaurants = await FavoriteRestoIdb.getAllResto();
 
-    // const restaurantContainer = document.getElementById('restaurant-list');
+    const restaurantContainer = document.getElementById('restaurant-list');
 
-    createElementlist('restaurant-list', restaurants);
+    if (restaurants.length > 0) {
+      createElementlist('restaurant-list', restaurants);
+    } else {
+      // Tampilkan pesan "Belum ada daftar restaurant favorite"
+      const noDataHtml = createNoDataTemplate('Tidak Restaurant yang Kamu Favoritkan');
+      restaurantContainer.innerHTML = noDataHtml;
+    }
   },
 };
 

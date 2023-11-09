@@ -25,10 +25,35 @@ const createLikedButtonTemplate = () => `
   </button>
 `;
 
+const createLoaderTemplate = {
+  show() {
+    return `
+    <div class="loader">
+    <img src="./images/loading2.gif" alt="Loading..." />
+    <div class="loader-text">
+      <p>Loading Please Wait...</p>
+    </div>
+    </div>    `;
+  },
+
+  remove() {
+    document.querySelector('.loader').remove();
+  },
+};
+
+const createNoDataTemplate = (message) => `
+    <div class="no-data-container">
+      <img src="./images/Nodata.png" alt="No Data Image">
+      <p class="no-data-message">${message}</p>
+    </div>
+  `;
+
 export {
   createElementlist,
   createElementItem,
   createElementDetail,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
+  createLoaderTemplate,
+  createNoDataTemplate,
 };
