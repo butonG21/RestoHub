@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import FavoriteRestoIdb from '../data/favorite-resto-idb';
 import {
   createLikeButtonTemplate,
@@ -23,7 +24,6 @@ const LikeButtonInitiator = {
 
   async _isRestoExist(id) {
     const resto = await FavoriteRestoIdb.getResto(id);
-
     return !!resto;
   },
 
@@ -32,6 +32,10 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       await FavoriteRestoIdb.putResto(this._resto);
+
+      // Menammpilkan pesan alert setelah berhasil menambahkan restoran ke favorit
+      Swal.fire('Restoran ditambahkan ke daftar favorit!', '', 'success');
+
       this._renderButton();
     });
   },
@@ -42,6 +46,10 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       await FavoriteRestoIdb.deleteResto(this._resto.id);
+
+      // Menampilkan pesan alert setelah berhasil menghapus restoran dari favorit
+      Swal.fire('Restoran dihapus dari daftar favorit!', '', 'success');
+
       this._renderButton();
     });
   },
