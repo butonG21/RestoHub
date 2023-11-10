@@ -19,3 +19,10 @@
         cursor: pointer;
           }
 }
+
+@media screen and (min-width: 768px){
+  .like {
+    width: 90px;
+    height: 90px;
+  }
+}

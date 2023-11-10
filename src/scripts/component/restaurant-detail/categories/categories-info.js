@@ -9,7 +9,7 @@ class CategoryInfo extends LitElement {
       justify-content: center;
     }
 
-    .detail-category-container a.detail-category-item {
+    .detail-category-container .detail-category-item {
       font-size: 0.8rem;
       text-decoration: none;
       color: #fff;
@@ -17,16 +17,15 @@ class CategoryInfo extends LitElement {
       padding: 0.7rem 1rem;
       border-radius: 10px;
       margin: 0.2rem 0.2rem;
-
+      cursor: pointer; /* Tambahkan cursor pointer untuk menandakan elemen dapat diklik */
     }
   }
 
   @media screen and (min-width: 768px) {
-    .detail-category-container a.detail-category-item {
+    .detail-category-container .detail-category-item {
       font-size: 1.08rem;
     }
   }
-
   `;
 
   static get properties() {
@@ -40,11 +39,21 @@ class CategoryInfo extends LitElement {
       <div class="detail-category-container">
         ${this.category.map(
     (category) => html`
-            <a href="#/search/${category.name}" class="detail-category-item">${category.name}</a>
+            <div
+              class="detail-category-item"
+              @click=${() => this.handleCategoryClick(category.name)}
+            >
+              ${category.name}
+            </div>
           `,
   )}
       </div>
     `;
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  handleCategoryClick(categoryName) {
+    console.log(`Kategori ${categoryName} diklik.`);
   }
 }
 

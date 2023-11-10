@@ -24,6 +24,7 @@ class ReviewList extends LitElement {
             date="${review.date}"
             review="${review.review}"
             key="${index}"
+            tabindex="0"
           ></review-item>
         `,
   )}

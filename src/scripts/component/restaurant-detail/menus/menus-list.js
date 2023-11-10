@@ -3,7 +3,6 @@ import './menus-item';
 
 class MenuList extends LitElement {
   static styles = css`
-    /* Your styles here */
   `;
 
   static properties = {
@@ -19,7 +18,7 @@ class MenuList extends LitElement {
     return html`
       ${this.menuList.map(
     (menuItem) => html`
-          <menu-item class="${this.name}" .menuItem="${menuItem}"></menu-item>
+          <menu-item class="${this.name}" .menuItem="${menuItem}" tabindex="0"></menu-item>
         `,
   )}
     `;

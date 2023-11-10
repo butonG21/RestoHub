@@ -87,7 +87,7 @@ div.add-review .title {
     filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.));
     margin: auto;
     overflow: hidden;
-    z-index: 1; /* Mengatur z-index menjadi 1 untuk menempatkan .content di depan */
+    z-index: 1;
   }
 
   div.content .restaurant-image img {
@@ -187,21 +187,21 @@ div.add-review .title {
     </div>
     <div class="detail container">
       <div class="detail-bottom">
-        <div class="restaurant-description">
-          <h2 class="title">Description</h2>
-          <p class="description-detail">${this.Detail.description}</p>
+        <div class="restaurant-description" tabindex="0">
+          <h2 class="title" tabindex="0">Description</h2>
+          <p class="description-detail" tabindex="0">${this.Detail.description}</p>
         </div>
       </div>
-      <div class="menus">
+      <div class="menus"  >
         <h2 class="section-title">Menus</h2>
         <menu-elements .foods="${this.foods}" .drinks="${this.drinks}"></menu-elements>
       </div>
-      <div class="reviews">
-        <h2 class="section-title">Reviews</h2>
+      <div class="reviews" tabindex="0">
+        <h2 class="section-title" tabindex="0">Reviews</h2>
         <review-list .reviewList="${this.reviews}"></review-list>
       </div>
       <div class="add-review">
-        <h2 class="title">Add Reviews</h2>
+        <h2 class="title" tabindex="0">Add Reviews</h2>
         <add-review .submitReview="${this.Detail.id}" .reviews="${this.reviews}"></add-review>
       </div>
     </div>

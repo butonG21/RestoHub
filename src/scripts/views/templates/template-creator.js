@@ -14,7 +14,7 @@ const createElementDetail = (element, data) => {
 };
 
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+  <button aria-label="like this movie" id="likeButton" class="like" tabindex="0" >
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
@@ -44,7 +44,7 @@ const createLoaderTemplate = {
 const createNoDataTemplate = (message) => `
     <div class="no-data-container">
       <img src="./images/Nodata.png" alt="No Data Image">
-      <p class="no-data-message">${message}</p>
+      <p class="no-data-message" tabindex="0">${message}</p>
     </div>
   `;
 

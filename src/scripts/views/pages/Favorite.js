@@ -28,7 +28,7 @@ const Favorite = {
       createElementlist('restaurant-list', restaurants);
     } else {
       // Tampilkan pesan "Belum ada daftar restaurant favorite"
-      const noDataHtml = createNoDataTemplate('Tidak Restaurant yang Kamu Favoritkan');
+      const noDataHtml = createNoDataTemplate('Tidak ada Restaurant yang Kamu Favoritkan');
       restaurantContainer.innerHTML = noDataHtml;
     }
   },

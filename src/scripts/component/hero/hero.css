@@ -61,16 +61,16 @@
     .hero .hero-text_wrapp .banner-text h2 {
         flex-direction: row;
         line-height: 50px;
-        font-size: 40px; /* Ukuran font yang lebih besar */
+        font-size: 40px;
     }
 
     .hero .hero-text_wrapp .banner-text h2 span.world-of-cuisine {
-        font-size: 46px; /* Ukuran font yang lebih besar */
+        font-size: 46px;
         padding-left: 5px;
     }
 
     .hero .hero-text_wrapp .banner-text h2 span.a-story {
-        font-size: 44px; /* Ukuran font yang lebih besar */
+        font-size: 44px;
         padding-left: 10px;
     }
 

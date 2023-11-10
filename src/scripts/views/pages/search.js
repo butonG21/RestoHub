@@ -6,7 +6,7 @@ const Search = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    // todo buat fungsi render search
   },
 };
 
