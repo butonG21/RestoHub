@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { html, css, LitElement } from 'lit-element';
 import RestaurantDataSources from '../../../data/restaurant-source';
 
@@ -122,25 +123,30 @@ class AddReview extends LitElement {
         if (response.message === 'success') {
           // Update daftar review
           this.reviews.push(reviewData);
+          console.log(reviewData);
 
           // Kosongkan formulir
           nameInput.value = '';
           reviewInput.value = '';
 
-          alert('Review berhasil ditambahkan!');
-          window.location.reload();
-
-          // Fokuskan ke elemen review yang Anda inginkan
-          const reviewElement = document.querySelector('review-list'); // Gantilah '#review-element' dengan selector yang sesuai
-          if (reviewElement) {
-            reviewElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+          Swal.fire({
+            title: 'Review berhasil di Tambahkan',
+            icon: 'success',
+            showCancelButton: false,
+            confirmButtonColor: 'rgb(210, 80, 15)',
+            confirmButtonText: 'OK',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Me-reload untuk update review list
+              window.location.reload();
+            }
+          });
         } else {
-          alert('Gagal menambahkan review. Silakan coba lagi.');
+          Swal.fire('Gagal menambahkan review. Silakan coba lagi.', '', 'error');
         }
       } catch (error) {
         console.error('Error saat menambahkan review:', error);
-        alert('Terjadi kesalahan. Silakan coba lagi.');
+        Swal.fire('Terjadi kesalahan. Silakan coba lagi.', '', 'error');
       }
     });
   }

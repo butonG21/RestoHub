@@ -1,6 +1,7 @@
 footer {
     margin-top: 50px;
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -69,7 +70,7 @@ footer .footer-wrapp .link-wrap h4 {
 
 footer .footer-wrapp .link-wrap ul.link-list {
     margin-top: 1rem;
-    padding-left: 0; /* Menghapus poin (dot) */
+    padding-left: 0;
     list-style: none;
 }
 
@@ -147,11 +148,6 @@ footer .footer-bottom span {
         margin-top: 70px;
     }
 
-    /* footer footer-bar {
-        margin-left: 40px;
-        margin-right: 40px;
-    } */
-
     footer .footer-wrapp {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -170,7 +166,6 @@ footer .footer-bottom span {
 
     footer .footer-wrapp .footer-brands p.footer-quote {
         margin-top: 5px;
-        /* max-width: 325px; */
         font-size: 20px;
         text-align: center;
     }

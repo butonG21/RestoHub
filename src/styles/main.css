@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Roboto slab';
   src: url(../public/font/RobotoSlab-VariableFont_wght.ttf);
+  /* font-display: swap; */
 }
 * {
   padding: 0;
@@ -9,11 +10,13 @@
   scroll-behavior: smooth;
 }
 
-body,
 html,
-main {
+body {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh;}
+
+.main {
+  height: 100%;
 }
 
 body {
@@ -60,6 +63,48 @@ hr {
   margin-bottom: 40px
 }
 
+.favorite-section {
+  margin-top: 6rem;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 60px;
+}
+
+.loader img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.loader-text {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.no-data-container {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.no-data-container img {
+  max-width: 100%;
+  max-height: 500px;
+}
+
+.no-data-message {
+  font-style: italic;
+  font-size: 30px;
+  color: #888;
+}
+
 @media screen and (min-width: 1200px){
 
   .container {
@@ -70,5 +115,5 @@ hr {
 @import url(../scripts/component/navigation-bar/app-bar.css);
 @import url(../scripts/component/hero/hero.css);
 @import url(../scripts/component/restaurants/restaurants.css);
-/* @import url(../scripts/component/restaurant-detail/detail.css); */
 @import url(../scripts/component/footer-bar/footer.css);
+@import url(./like-responsive.css);

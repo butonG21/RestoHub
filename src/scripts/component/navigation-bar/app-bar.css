@@ -49,17 +49,17 @@
 
   .app-bar_brands h1 {
     line-height: 10px;
-    font-size: 30px; /* Ukuran font yang lebih besar */
-    color: #F56D15; /* Warna yang mencolok lainnya */
+    font-size: 30px;
+    color: #F56D15;
     user-select: none;
     font-weight: 500;
     padding: 10px;
   }
 
   .app-bar_brands h1 .second-title {
-    font-size: 35px; /* Ukuran font yang lebih besar */
-    font-weight: bold; /* Tebalkan teks */
-    color: #5E17EB; /* Warna yang mencolok lainnya */
+    font-size: 35px;
+    font-weight: bold;
+    color: #5E17EB;
 
     }
 
@@ -98,7 +98,6 @@
   }
 }
 
-/*  layar dengan lebar minimal 768px */
 @media screen and (min-width: 768px) {
   .app-bar {
       grid-template-columns: 1fr auto;
@@ -133,7 +132,6 @@
   }
 }
 
-/* app-bar di layar dengan lebar minimal 1024px */
 @media screen and (min-width: 1024px) {
   .app-bar {
       padding: 8px 83px;

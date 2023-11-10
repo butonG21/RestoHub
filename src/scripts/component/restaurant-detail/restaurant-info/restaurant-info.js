@@ -147,25 +147,25 @@ class RestaurantInfo extends LitElement {
     console.log(this.info.id);
     return html`
     <div class="container" id="content">
-      <div class="restaurant-image">
+      <div class="restaurant-image" tabindex="0">
         <img src="${API_ENDPOINTS.Image_Url.Small_Resolution(this.info.pictureId)}" alt="Profile Image" />
       </div>
 
       <div class="restaurant-info comtainer">
-        <h2 class="name">${this.info.name}</h2>
+        <h2 class="name" tabindex="0">${this.info.name}</h2>
         <div class="location-rating">
           <div class="location">
             <img src="./images/location-sign2.svg" alt="location-sign" />
-            <span class="location-name">${this.info.city}</span>
+            <span class="location-name" tabindex="0">${this.info.city}</span>
           </div>
           <div class="rating">
           <span class="star-icon">★</span>
-            <span class="rating-value">${this.info.rating}</span>
+            <span class="rating-value" tabindex="0">${this.info.rating}</span>
           </div>
         </div>
 
         <div class="address-info">
-          <div class="address">
+          <div class="address" tabindex="0">
             <span>${this.info.address}</span>
           </div>
         </div>

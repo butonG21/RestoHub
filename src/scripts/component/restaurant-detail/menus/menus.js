@@ -16,12 +16,12 @@ class MenuElements extends LitElement {
         padding: 10px 20px;
         transition: .3s;
         font-size: 17px;
-        background-color: #fa0;
+        background-color: #F15412;
     }
     div.tab button.active {
     background-color: #fff;
-    border: 1px solid #fa0;
-    color: #fa0;
+    border: 1px solid #F6894B;
+    color: #F6894B;
     }
 
     .menu-container {
@@ -86,8 +86,8 @@ class MenuElements extends LitElement {
 
     return html`
     <div class="tab">
-    <button @click="${() => this.switchTab('foods')}" class="tablinks ${this.activeTab === 'foods' ? 'active' : ''}" name="foods">Foods</button>
-    <button @click="${() => this.switchTab('drinks')}" class="tablinks ${this.activeTab === 'drinks' ? 'active' : ''}" name="drinks">Drinks</button>
+    <button @click="${() => this.switchTab('foods')}" class="tablinks ${this.activeTab === 'foods' ? 'active' : ''}" name="foods" tabindex="0">Foods</button>
+    <button @click="${() => this.switchTab('drinks')}" class="tablinks ${this.activeTab === 'drinks' ? 'active' : ''}" name="drinks" tabindex="0">Drinks</button>
   </div>
 <div id="${this.activeTab}" class="tabcontent ${activeTab === 'foods' ? 'active' : ''}">
         <menu-list class="menu-container" name="food-drink" .menuList="${menuList}"></menu-list>

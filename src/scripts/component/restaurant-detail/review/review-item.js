@@ -64,14 +64,14 @@ class ReviewItem extends LitElement {
   render() {
     return html`
       <div class="user-info-wrapper">
-        <img src="https://source.unsplash.com/100x100?avatar ${this.name}" alt="">
+        <img src="https://source.unsplash.com/100x100?avatar ${this.name}" alt="user-image" tabindex="0">
         <div class="user-and-date">
-          <h4 class="user-name">${this.name}</h4>
-          <p class="date">${this.date}</p>
+          <h4 class="user-name" tabindex="0">${this.name}</h4>
+          <p class="date" tabindex="0">${this.date}</p>
         </div>
       </div>
       <div class="user-review">
-        <p class="review-text">"${this.review}"</p>
+        <p class="review-text" tabindex="0">"${this.review}"</p>
       </div>
     `;
   }

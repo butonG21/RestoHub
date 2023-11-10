@@ -12,10 +12,6 @@ class MenuItem extends LitElement {
       filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
   }
 
-  a {
-    text-decoration: none;
-  }
-
   h4.menu-item-title {
     font-weight: 600;
     font-size: 14px;
@@ -33,7 +29,7 @@ class MenuItem extends LitElement {
   }
 }
 
-@media screen and (min-width: 520px){
+@media screen and (min-width: 768px){
   .image-wrapper img {
     width: 100%;
     min-height: 170px
@@ -56,16 +52,14 @@ class MenuItem extends LitElement {
     const tabSection = this.getAttribute('class');
 
     return html`
-      <a href="#/search/${this.menuItem.name}">
         <div class="image-wrapper">
           <img
             class="img-responsive menu-item-image"
             src="https://source.unsplash.com/200x200?${tabSection} ${this.menuItem.name}"
-            alt="Menu ${this.menuItem.name} Image"
+            alt="Menu ${this.menuItem.name} Image" tabindex="0"
           />
         </div>
-        <h4 class="menu-item-title">${this.menuItem.name}</h4>
-      </a>
+        <h4 class="menu-item-title" tabindex="0">${this.menuItem.name}</h4>
     `;
   }
 }
