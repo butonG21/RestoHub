@@ -37,12 +37,6 @@ class MenuElements extends LitElement {
       }
     }
 
-    @media screen and (min-width: 420px) {
-      .menu-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     @media screen and (min-width: 520px) {
       .menu-container {
         grid-template-columns: repeat(3, 1fr);

@@ -23,5 +23,5 @@ window.addEventListener('load', () => {
 
 document.querySelector('.skip-link').addEventListener('click', (e) => {
   e.preventDefault();
-  document.querySelector('#main-content').focus();
+  document.querySelector('#maincontent').focus();
 });
