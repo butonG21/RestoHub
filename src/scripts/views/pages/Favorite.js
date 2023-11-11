@@ -9,7 +9,7 @@ const Favorite = {
           <div class="container" id='main-content'>
             <div id="content">
               <div class="favorite-section">
-                <h2 class="section-title">Favorite Restaurants </h2>
+                <h2 class="section-title" tabindex="0">Favorite Restaurants </h2>
               </div>
               <div class="restaurant-list" id="restaurant-list">
                 <restaurant-list></restaurant-list>
