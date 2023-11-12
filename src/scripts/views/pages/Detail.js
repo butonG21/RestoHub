@@ -28,13 +28,7 @@ const Detail = {
 
         LikeButtonInitiator.init({
           likeButtonContainer: document.querySelector('#likeButtonContainer'), // Select likeButtonContainer
-          resto: {
-            id: restaurantData.restaurant.id,
-            name: restaurantData.restaurant.name,
-            pictureId: restaurantData.restaurant.pictureId,
-            city: restaurantData.restaurant.city,
-            rating: restaurantData.restaurant.rating,
-          },
+          resto: { ...restaurantData.restaurant },
         });
       } else {
         console.log('Restaurant data is not available.');
