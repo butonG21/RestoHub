@@ -63,6 +63,7 @@ class AddReview extends LitElement {
 
   static properties = {
     submitReview: { type: Object },
+    reviews: { type: Array },
   };
 
   render() {
@@ -101,6 +102,7 @@ class AddReview extends LitElement {
     super.firstUpdated(changedProperties);
 
     const form = this.shadowRoot.querySelector('form');
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -122,27 +124,29 @@ class AddReview extends LitElement {
 
         if (response.message === 'success') {
           // Update daftar review
-          this.reviews.push(reviewData);
-          console.log(reviewData);
+          this.reviews = [...this.reviews, reviewData];
+          this.requestUpdate('reviews', []); // Trigger LitElement to update reviews
 
           // Kosongkan formulir
           nameInput.value = '';
           reviewInput.value = '';
 
-          Swal.fire({
-            title: 'Review berhasil di Tambahkan',
+          await Swal.fire({
+            title: 'Restoran ditambahkan ke daftar favorit!',
             icon: 'success',
-            showCancelButton: false,
-            confirmButtonColor: 'rgb(210, 80, 15)',
-            confirmButtonText: 'OK',
-          }).then((result) => {
-            if (result.isConfirmed) {
-              // Me-reload untuk update review list
-              window.location.reload();
-            }
+            html: '<button id="ConfirmButton" style="background-color: #F05454; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">OK</button>',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            didRender: () => {
+              // Menambahkan event listener ke tombol yang disesuaikan
+              document.getElementById('ConfirmButton').addEventListener('click', () => {
+                Swal.close(); // Menutup SweetAlert
+                // No need to reload the page, just update the reviews and rerender
+                this.requestUpdate();
+                window.location.reload();
+              });
+            },
           });
-        } else {
-          Swal.fire('Gagal menambahkan review. Silakan coba lagi.', '', 'error');
         }
       } catch (error) {
         console.error('Error saat menambahkan review:', error);

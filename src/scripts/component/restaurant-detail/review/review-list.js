@@ -17,7 +17,7 @@ class ReviewList extends LitElement {
 
   render() {
     return html`
-      ${this.reviewList.map(
+      ${this.reviewList ? this.reviewList.map(
     (review, index) => html`
           <review-item
             name="${review.name}"
@@ -27,9 +27,8 @@ class ReviewList extends LitElement {
             tabindex="0"
           ></review-item>
         `,
-  )}
+  ) : html``}
     `;
   }
 }
-
 customElements.define('review-list', ReviewList);
