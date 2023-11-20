@@ -55,7 +55,7 @@
         font-weight: 400;
         font-size: 15px;
         line-height: 22px;
-        color: #B4B4B3;
+        color: #555;
     }
 
     resto-item div.card div.text-card-wrapper div.card-description div.card-upper div.rating .rating-icon {
@@ -64,7 +64,7 @@
     }
 
     resto-item div.card div.text-card-wrapper div.card-description div.card-upper div.rating .rating-value {
-        color: #010611;
+        color: #555;
         font-size: 15px;
     }
 
@@ -72,7 +72,7 @@
         font-weight: 500;
         font-size: 16px;
         line-height: 30px;
-        color: #010611;
+        color: #222;
         padding-bottom: 10px;
         margin-top: 12px;
     }

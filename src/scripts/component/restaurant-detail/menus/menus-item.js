@@ -12,7 +12,7 @@ class MenuItem extends LitElement {
       filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
   }
 
-  h4.menu-item-title {
+  h3.menu-item-title {
     font-weight: 600;
     font-size: 14px;
     line-height: 30px;
@@ -56,10 +56,10 @@ class MenuItem extends LitElement {
           <img
             class="img-responsive menu-item-image"
             src="https://source.unsplash.com/200x200?${tabSection} ${this.menuItem.name}"
-            alt="Menu ${this.menuItem.name} Image" tabindex="0"
+            alt="Menu ${this.menuItem.name} Image" loading="lazy" tabindex="0"
           />
         </div>
-        <h4 class="menu-item-title" tabindex="0">${this.menuItem.name}</h4>
+        <h3 class="menu-item-title" tabindex="0">${this.menuItem.name}</h3>
     `;
   }
 }
