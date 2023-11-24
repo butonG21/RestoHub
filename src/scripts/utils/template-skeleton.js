@@ -80,7 +80,7 @@ const generateHomePageSkeleton = () => {
 
 const generatefavoriteSkeleton = () => {
   const favorite = `
-  <div class="container" id='main-content'>
+  <div class="container-skeleton" id='main-content'>
   <div id="content">
     <div class="favorite-section">
       <h2 class="section-title" tabindex="0">Favorite Restaurants </h2>
