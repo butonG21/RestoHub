@@ -15,7 +15,6 @@
 }
 
 
-/* Common Skeleton Styles */
 .skeleton {
   background-color: #f0f0f0;
   border-radius: 8px;
@@ -24,10 +23,10 @@
 }
 /* Restaurant Info Styles */
 
-.container {
+.container-skeleton {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly; /* Align elements horizontally */
+  justify-content: space-evenly;
   margin-top: 100px;
 }
 
@@ -45,12 +44,12 @@ restaurant-infos {
   flex-direction: column;
   align-items: space-evenly;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.6); /* Add a semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
-  top: 0; /* Place the restaurant info above the hero background */
+  top: 0;
   width: 100%;
   color: #F56D15;
-  
+
 }
 
 .name {
