@@ -3,7 +3,7 @@ import '../../component/restaurants/restaurant-list';
 import {
   generateHomePageSkeleton,
   generateRestoItemSkeleton,
-} from '../../utils/template-skeleton-UI';
+} from '../../utils/template-skeleton';
 import { createElementlist } from '../templates/template-creator';
 import '../../component/error';
 
