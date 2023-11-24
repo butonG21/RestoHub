@@ -19,6 +19,12 @@ class App {
     });
   }
 
+  renderSkeletonLoad() {
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    const page = routes[url];
+    this._content.innerHTML = page.skeletonLoad();
+  }
+
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];

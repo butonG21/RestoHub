@@ -1,0 +1,116 @@
+.detail-upper {
+  height: 430px;
+}
+
+.detail-upper .hero-background .background-wrap {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+}
+
+.detail-upper .hero-background .background-wrap .skeleton-img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Common Skeleton Styles */
+.skeleton {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+/* Restaurant Info Styles */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; /* Align elements horizontally */
+  margin-top: 100px;
+}
+
+.restaurant-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+restaurant-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* Add a semi-transparent background */
+  position: absolute;
+  top: 0; /* Place the restaurant info above the hero background */
+  width: 100%;
+  color: #F56D15;
+  
+}
+
+.name {
+  height: 24px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.location-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.location-name {
+  height: 16px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  font-size: 18px;
+  color: #e0e0e0;
+  margin-right: 4px;
+}
+
+.rating-value {
+  height: 16px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.address-info {
+  padding: 5px;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.address {
+  height: 16px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+.address-info {
+  padding: 5px;
+  font-size: 14px;
+  color: #e0e0e0;
+}

@@ -9,6 +9,7 @@ const ImageminMozjpeg = require('imagemin-mozjpeg');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -28,8 +29,6 @@ module.exports = {
           'style-loader',
           // Translates CSS into CommonJS
           'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
         ],
       },
       {
@@ -68,6 +67,10 @@ module.exports = {
         },
         extractComments: false,
       }),
+      new CssMinimizerPlugin({
+        test: /\.css$/,
+        parallel: true,
+      }),
     ],
     splitChunks: {
       chunks: 'all',
@@ -79,9 +82,10 @@ module.exports = {
       automaticNameDelimiter: '~',
       enforceSizeThreshold: 50000,
       cacheGroups: {
-        defaultVendors: {
+        vendor: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10,
+          name: 'vendors',
+          chunks: 'all',
         },
         default: {
           minChunks: 2,
@@ -135,7 +139,10 @@ module.exports = {
         }),
       ],
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+
+    }),
 
     new CompressionPlugin({
       test: /\.js(\?.*)?$/i,

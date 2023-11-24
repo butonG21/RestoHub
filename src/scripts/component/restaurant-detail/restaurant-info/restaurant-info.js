@@ -10,7 +10,7 @@ class RestaurantInfo extends LitElement {
       top: -25rem;
       position: relative;
       padding-top: 1.5rem;
-      width: 100%
+      width: 100%;
       color: #F56D15;
     }
     .container {

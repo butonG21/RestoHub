@@ -117,3 +117,7 @@ hr {
 @import url(../scripts/component/restaurants/restaurants.css);
 @import url(../scripts/component/footer-bar/footer.css);
 @import url(./like-responsive.css);
+@import url(./restoItem-skeleton.css);
+@import url(./detail-skeleton.css);
+
+
