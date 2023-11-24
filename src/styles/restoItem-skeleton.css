@@ -1,0 +1,60 @@
+.card.skeleton {
+    margin: 1rem;
+    background: #fff;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    animation: loading 1s;
+  }
+
+  .img-card {
+    width: 100%;
+    height: 120px;
+    background: #fff;
+    border-radius: 15px 15px 0 0;
+  }
+
+.card .text-card-wrapper .card-description .card-upper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  span.rating-value {
+    min-height: 1rem;
+    background: #eee;
+    padding-left: 0px;
+    width: 40%;
+  }
+  .resto-title {
+    height: 1rem;
+    background: #eee;
+    margin: 0.5rem 0;
+    width: 80%;
+  }
+
+  p.resto-location {
+    height: 1rem;
+    background: #eee;
+    margin: 0.5rem 0;
+    width: 60%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .rating .rating-icon {
+    color: #eee;
+    font-size: 25px;
+  }
+
+  @keyframes loading {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

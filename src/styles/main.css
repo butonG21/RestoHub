@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Roboto slab';
   src: url(../public/font/RobotoSlab-VariableFont_wght.ttf);
-  /* font-display: swap; */
+  font-display: swap;
 }
 * {
   padding: 0;
@@ -11,7 +11,7 @@
 }
 
 html,
-body {
+body, main {
   width: 100%;
   min-height: 100vh;}
 
@@ -117,3 +117,7 @@ hr {
 @import url(../scripts/component/restaurants/restaurants.css);
 @import url(../scripts/component/footer-bar/footer.css);
 @import url(./like-responsive.css);
+@import url(./restoItem-skeleton.css);
+@import url(./detail-skeleton.css);
+
+

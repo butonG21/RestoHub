@@ -177,11 +177,12 @@ div.add-review .title {
       <div class="hero-background">
         <div class="background-wrap">
           <div class="gradient-img"></div>
-          <img
-            src="./images/heros/hero-image_4.jpg"
-            alt="restaurant-profile"
-          />
-        </div>
+          <picture>
+          <source media="(max-width: 425px)" srcset="./images/hero-image-4-small.jpg">
+          <source media="(max-width: 768px)" srcset="./images/hero-image-2-large.jpg">
+              <img src="./images/hero-image-2.jpg" alt="hero-image">
+          </picture>
+          </div>
       </div>
       <restaurant-info .info="${this.Detail}"></restaurant-info>
     </div>

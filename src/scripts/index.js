@@ -12,6 +12,8 @@ const app = new App({
   content: document.querySelector('#maincontent'),
 });
 
+app.renderSkeletonLoad();
+
 window.addEventListener('hashchange', () => {
   app.renderPage();
 });

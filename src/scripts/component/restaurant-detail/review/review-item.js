@@ -64,7 +64,7 @@ class ReviewItem extends LitElement {
   render() {
     return html`
       <div class="user-info-wrapper">
-        <img src="https://source.unsplash.com/100x100?avatar ${this.name}" alt="user-image" tabindex="0">
+        <img src="https://source.unsplash.com/100x100?avatar ${this.name}" alt="user-image" loading="lazy" tabindex="0">
         <div class="user-and-date">
           <h4 class="user-name" tabindex="0">${this.name}</h4>
           <p class="date" tabindex="0">${this.date}</p>

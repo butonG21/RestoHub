@@ -1,9 +1,16 @@
 import RestaurantDataSources from '../../data/restaurant-source';
 import '../../component/restaurants/restaurant-list';
-import { createElementlist, createLoaderTemplate } from '../templates/template-creator';
+import {
+  generateHomePageSkeleton,
+  generateRestoItemSkeleton,
+} from '../../utils/template-skeleton-UI';
+import { createElementlist } from '../templates/template-creator';
 import '../../component/error';
 
 const Home = {
+  skeletonLoad() {
+    return generateHomePageSkeleton();
+  },
   async render() {
     const html = `
     <div class="content">
@@ -13,8 +20,7 @@ const Home = {
         <div id="content">
           <h2 class="section-title" tabindex="0">Daftar Restaurant</h2>
           <div class="main">
-            ${document.querySelector('main').innerHTML = createLoaderTemplate.show()}
-            <restaurant-list></restaurant-list>
+            <restaurant-list>${generateRestoItemSkeleton(20)}</restaurant-list>
           </div>
         </div>
       </div>
@@ -26,7 +32,6 @@ const Home = {
     try {
       const restaurants = await RestaurantDataSources.restaurantList();
       // menghilangkan loader.
-      createLoaderTemplate.remove();
 
       createElementlist('restaurant-list', restaurants.restaurants);
 

@@ -1,17 +1,25 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantDataSources from '../../data/restaurant-source';
 import '../../component/restaurant-detail/detail-restaurant';
+import {
+  generateDetailSkeleton, // Use the new skeleton template for detail
+  generateRestoItemSkeleton,
+} from '../../utils/template-skeleton-UI';
 import { createElementDetail, createLoaderTemplate } from '../templates/template-creator';
-import LikeButtonInitiator from '../../utils/ like-button-initiator';
+import LikeButtonInitiator from '../../utils/like-button-presenter';
+import FavoriteRestoIdb from '../../data/favorite-resto-idb';
 
 const Detail = {
+  skeletonLoad() {
+    return generateDetailSkeleton(); // Use the new skeleton template for detail
+  },
+
   async render() {
     const html = `
-    <div id="main-content" tabindex="0">
-    <div id="likeButtonContainer"></div>
-    ${document.querySelector('main').innerHTML = createLoaderTemplate.show()}
-        <restaurant-detail class="detail"></restaurant-detail>
-    </div>
+      <div id="main-content" tabindex="0">
+        <div id="likeButtonContainer"></div>
+        <restaurant-detail class="detail">${generateRestoItemSkeleton()}</restaurant-detail>
+      </div>
     `;
     return html;
   },
@@ -21,26 +29,18 @@ const Detail = {
 
     try {
       const restaurantData = await RestaurantDataSources.detailsRestaurant(url.id);
-      createLoaderTemplate.remove();
 
       if (restaurantData.restaurant) {
         createElementDetail('restaurant-detail', restaurantData.restaurant);
 
         LikeButtonInitiator.init({
-          likeButtonContainer: document.querySelector('#likeButtonContainer'), // Select likeButtonContainer
-          resto: {
-            id: restaurantData.restaurant.id,
-            name: restaurantData.restaurant.name,
-            pictureId: restaurantData.restaurant.pictureId,
-            city: restaurantData.restaurant.city,
-            rating: restaurantData.restaurant.rating,
-          },
+          likeButtonContainer: document.querySelector('#likeButtonContainer'),
+          FavoriteResto: FavoriteRestoIdb,
+          resto: { ...restaurantData.restaurant },
         });
       } else {
         console.log('Restaurant data is not available.');
-        createLoaderTemplate.remove();
 
-        // Gunakan komponen ErrorMessage untuk menampilkan pesan error.
         const errorMessage = document.createElement('error-message');
         document.getElementById('main-content').appendChild(errorMessage);
       }
@@ -48,7 +48,6 @@ const Detail = {
       console.error('Error fetching restaurant data:', error);
       createLoaderTemplate.remove();
 
-      // Gunakan komponen ErrorMessage untuk menampilkan pesan error.
       const errorMessage = document.createElement('error-message');
       document.getElementById('main-content').appendChild(errorMessage);
     }

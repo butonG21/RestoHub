@@ -10,7 +10,7 @@ class RestaurantInfo extends LitElement {
       top: -25rem;
       position: relative;
       padding-top: 1.5rem;
-      width: 100%
+      width: 100%;
       color: #F56D15;
     }
     .container {
@@ -148,7 +148,7 @@ class RestaurantInfo extends LitElement {
     return html`
     <div class="container" id="content">
       <div class="restaurant-image" tabindex="0">
-        <img src="${API_ENDPOINTS.Image_Url.Small_Resolution(this.info.pictureId)}" alt="Profile Image" />
+        <img src="${API_ENDPOINTS.Image_Url.Small_Resolution(this.info.pictureId)}" alt="Profile Image" loading="lazy" />
       </div>
 
       <div class="restaurant-info comtainer">
