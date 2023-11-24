@@ -4,7 +4,7 @@ import '../../component/restaurant-detail/detail-restaurant';
 import {
   generateDetailSkeleton, // Use the new skeleton template for detail
   generateRestoItemSkeleton,
-} from '../../utils/template-skeleton-UI';
+} from '../../utils/template-skeleton';
 import { createElementDetail, createLoaderTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-presenter';
 import FavoriteRestoIdb from '../../data/favorite-resto-idb';

@@ -3,7 +3,7 @@ import '../../component/restaurants/restaurant-list';
 import {
   generatefavoriteSkeleton,
   generateRestoItemSkeleton,
-} from '../../utils/template-skeleton-UI';
+} from '../../utils/template-skeleton';
 import { createElementlist, createNoDataTemplate } from '../templates/template-creator';
 
 const Favorite = {
