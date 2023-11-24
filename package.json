@@ -6,6 +6,7 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
+    "build-and-image": "webpack --config webpack.prod.js && node sharp.js",
     "serve": "http-server dist -g",
     "test": "jest --logHeapUsage",
     "test:watch": "jest --watchAll",
