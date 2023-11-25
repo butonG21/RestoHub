@@ -1,8 +1,3 @@
-// Example import for CodeceptJS tests
-import {
-  Feature, Before, Scenario, locate,
-} from 'codeceptjs';
-
 const assert = require('assert');
 
 Feature('Liking Favorite Restaurant');

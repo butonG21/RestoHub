@@ -1,8 +1,3 @@
-// Example import for CodeceptJS tests
-import {
-  Feature, Before, Scenario, locate,
-} from 'codeceptjs';
-
 const assert = require('assert');
 
 Feature('Change Menu Restaurant');
@@ -31,15 +26,16 @@ Scenario('change menu restaurant', ({ I }) => {
 });
 
 Scenario('check menu foods and drinks', async ({ I }) => {
-  I.scrollTo('menu-elements');
+  I.scrollTo('menu-list');
   I.wait(1);
-  I.seeElement('menu-list');
+  I.seeElement('menu-item');
 
   /* Ambil nama menu makanan pertama */
 
   const foodMenuTitle = await I.grabTextFrom(
-    locate('menu-list menu-item h4').first(),
+    locate('menu-item h3'),
   );
+  console.log(foodMenuTitle);
 
   I.scrollTo('.restaurant-description');
 
@@ -47,12 +43,12 @@ Scenario('check menu foods and drinks', async ({ I }) => {
 
   I.wait(2);
 
-  I.seeElement('menu-list h4');
+  I.seeElement('menu-item h3');
 
   /* Ambil nama menu minuman pertama */
 
   const drinksMenuTitle = await I.grabTextFrom(
-    locate('menu-list h4').first(),
+    locate('menu-item h3'),
   );
   console.log(drinksMenuTitle);
 
