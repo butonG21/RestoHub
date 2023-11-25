@@ -1,4 +1,7 @@
-/* eslint-disable import/prefer-default-export */
+import {
+  it, expect,
+} from '@jest/globals';
+
 const itActsAsFavoriteRestoModel = (favoriteResto) => {
   it('should return the Resto that has been added', async () => {
     favoriteResto.putResto({ id: 1 });
@@ -43,4 +46,4 @@ const itActsAsFavoriteRestoModel = (favoriteResto) => {
   });
 };
 
-export { itActsAsFavoriteRestoModel };
+export default itActsAsFavoriteRestoModel;
