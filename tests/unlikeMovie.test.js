@@ -1,3 +1,7 @@
+import {
+  describe, it, expect, beforeEach, afterEach,
+} from '@jest/globals';
+
 import FavoriteRestoIdb from '../src/scripts/data/favorite-resto-idb';
 import * as TestFactories from './helpers/testFactories';
 

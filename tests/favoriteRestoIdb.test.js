@@ -1,4 +1,5 @@
-import { itActsAsFavoriteRestoModel } from './contracts/favoriteRestoContract';
+import { describe, afterEach } from '@jest/globals';
+import itActsAsFavoriteRestoModel from './contracts/favoriteRestoContract';
 import FavoriteRestoIdb from '../src/scripts/data/favorite-resto-idb';
 
 describe('Favorite Resto Idb Contract Test Implementation', () => {

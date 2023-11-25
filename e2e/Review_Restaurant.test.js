@@ -1,3 +1,7 @@
+import {
+  Feature, Scenario, locate,
+} from 'codeceptjs';
+
 Feature('add Review Restaurant');
 
 Scenario('add Review Restaurant', ({ I }) => {
