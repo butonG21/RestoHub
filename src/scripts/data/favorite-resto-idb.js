@@ -24,7 +24,7 @@ const FavoriteRestoIdb = {
 
   async putResto(Resto) {
     if (!Object.prototype.hasOwnProperty.call(Resto, 'id')) {
-      return Promise.reject(new Error('Resto must have an id property'));
+      return false;
     }
 
     return (await dbPromise).put(OBJECT_STORE_NAME, Resto);
